@@ -18,7 +18,7 @@ function processFirstItem(stringList, callback) {
 }
 console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
 
-//Adding comment for initial push
+
 
 // ⭐️ Example Challenge END ⭐️
 
@@ -31,10 +31,16 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   1. What is the difference between counter1 and counter2?
   
+  counter1 declares the variable "count" within the scope of the counterMaker function and counter2 declares the variable "count" in the global scope
+
   2. Which of the two uses a closure? How can you tell?
+
+  counter1 uses a closure because it is the only one that has an inner function grabbing data outside of it's scope. 
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+
+      counter1 would be preferable the majority of the time. counter2 would be better if you want to access the count variable globally
 */
 
 // counter1 code
@@ -64,8 +70,8 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.floor(Math.random() * 3)
 }
 
 
@@ -83,7 +89,9 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
+// parameters are innings cb function, number of innings (between 1-9)
+
+function finalScore(inningcb, numInnings){
   /*Code Here*/
 }
 
@@ -91,6 +99,9 @@ function finalScore(/*code Here*/){
 Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
+
+
+// pass in inningcb & return object with a score for home and away. 
 
 function getInningScore(/*Your Code Here */) {
   /*Your Code Here */
@@ -138,6 +149,8 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
+
+// get inningcb & scorecb & receive number of innings & return an array
 function scoreboard(/* CODE HERE */) {
   /* CODE HERE */
 }
