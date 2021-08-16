@@ -157,9 +157,24 @@ Use the scoreboard function below to do the following:
   */
 
 
-// get inningcb & scorecb & receive number of innings & return an array
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inningcb, scorecb, numInnings) {
+  let scoreArray = []
+
+  for (let i = 1 ; i < (numInnings + 1) ; i++) {
+    scoreArray.push(`Inning ${i}: Away ${inningcb()} - Home ${inningcb()}`)
+  }
+  let awayScore = 0
+  let homeScore = 0
+
+  
+
+  if (awayScore !== homeScore) {
+    scoreArray.push(`Final Score: Away ${awayScore} - Home ${homeScore}`)
+  } else if (awayScore === homeScore) {
+    scoreArray.push(`This game will require extra innings: Away ${awayScore} - Home ${homeScore}`)
+  }
+
+  return scoreArray
 }
 
 
