@@ -18,6 +18,8 @@ function processFirstItem(stringList, callback) {
 }
 console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
 
+//Adding comment for initial push
+
 // ⭐️ Example Challenge END ⭐️
 
 
