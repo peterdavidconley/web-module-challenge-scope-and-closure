@@ -92,7 +92,13 @@ Use the finalScore function below to do the following:
 // parameters are innings cb function, number of innings (between 1-9)
 
 function finalScore(inningcb, numInnings){
-  /*Code Here*/
+  const score = {Home: 0, Away: 0}
+
+  for (let i = 0 ; i < numInnings ; i++) {
+    score.Home += inningcb()
+    score.Away += inningcb()
+  }
+  return score 
 }
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
@@ -103,8 +109,9 @@ Use the getInningScore() function below to do the following:
 
 // pass in inningcb & return object with a score for home and away. 
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inningcb) {
+  let objectScore = {Home: inningcb(), Away: inningcb()}
+  return objectScore
 }
 
 
