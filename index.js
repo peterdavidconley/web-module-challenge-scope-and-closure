@@ -159,14 +159,14 @@ Use the scoreboard function below to do the following:
 
 function scoreboard(inningcb, scorecb, numInnings) {
   let scoreArray = []
-
-  for (let i = 1 ; i < (numInnings + 1) ; i++) {
-    scoreArray.push(`Inning ${i}: Away ${inningcb()} - Home ${inningcb()}`)
-  }
   let awayScore = 0
   let homeScore = 0
 
-  
+  for (let i = 1 ; i < (numInnings+1) ; i++) {
+    scoreArray.push(`Inning ${i}: Away ${inningcb()} - Home ${inningcb()}`)
+    awayScore = awayScore + parseInt(scoreArray[i].split(" ")[3])
+    homeScore = homeScore + parseInt(scoreArray[i].split(" ")[6])
+  }
 
   if (awayScore !== homeScore) {
     scoreArray.push(`Final Score: Away ${awayScore} - Home ${homeScore}`)
@@ -176,7 +176,6 @@ function scoreboard(inningcb, scorecb, numInnings) {
 
   return scoreArray
 }
-
 
 
 
